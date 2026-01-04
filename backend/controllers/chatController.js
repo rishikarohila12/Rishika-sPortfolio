@@ -64,7 +64,7 @@ if (
 ) {
   return res.json({
     reply: `You can find Rishika Rohila on LinkedIn here:
-🔗 https://www.linkedin.com/in/rishika-rohila-a83527260`
+🔗 https://linkedin.com/in/rishika-rohila-a83527260`
   });
 }
 // 🔹 GITHUB
