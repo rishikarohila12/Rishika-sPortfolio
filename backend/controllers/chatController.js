@@ -84,18 +84,25 @@ if (lowerMsg.includes("leetcode")) {
 }
 
 
-    // 🔹 CONTACT
-    if (lowerMsg.includes("contact")) {
-      return res.json({
-        reply: `You can contact Rishika here:
+// 🔹 CONTACT
+// 🔹 CONTACT / SOCIAL (SAFE HANDLING)
+if (
+  lowerMsg.includes("contact") ||
+  lowerMsg.includes("social") ||
+  lowerMsg.includes("social links") ||
+  lowerMsg.includes("contact details") ||
+  lowerMsg.includes("connect")
+) {
+  return res.json({
+    reply: `You can contact Rishika Rohila here:
 
-📧 Email: ruhelarishika@gmail.com   
-🔗 LinkedIn: https://linkedin.com/in/rishika-rohila-a83527260  
+📧 Email: ruhelarishika@gmail.com  
+🔗 LinkedIn: https://www.linkedin.com/in/rishika-rohila-a83527260  
 💻 GitHub: https://github.com/rishikarohila12  
 🧠 LeetCode: https://leetcode.com/u/rishroh`
-      });
-      
-    }
+  });
+}
+
 
     // 🔹 AI call ONLY when needed
     const groq = new Groq({
@@ -118,14 +125,18 @@ STRICT RULES (VERY IMPORTANT):
 - NEVER create fake project names or descriptions.
 - NEVER assume internships, freelancing, or job roles.
 
+STRICT RULES (VERY IMPORTANT):
+- ALWAYS provide the exact social media and contact links provided below.
+- NEVER invent, assume, or guess handles like 'ruhelarishika'.
+
 CONTACT DETAILS RULE:
 - When user asks for contact details, ONLY return the fixed links provided below.
 - Do NOT modify, rephrase, or add extra links.
 
 FIXED CONTACT LINKS:
-- LinkedIn: https://www.linkedin.com/in/rishika-rohila
-- GitHub: https://github.com/ruhelarishika
-- LeetCode: https://leetcode.com/ruhelarishika
+- LinkedIn: https://linkedin.com/in/rishika-rohila-a83527260
+- GitHub:  https://github.com/rishikarohila12  
+- LeetCode: https://leetcode.com/u/rishroh
 
 ALLOWED:
 - Education summary
@@ -165,6 +176,11 @@ SKILLS (ONLY THESE):
 - Databases: MySQL, MongoDB
 - Tools: Git, GitHub, VS Code, Postman, Vercel
 - Core Subjects: DSA, OOP, DBMS, Computer Networks
+
+CRITICAL:
+- NEVER include LinkedIn, GitHub, LeetCode links in summaries or paragraphs.
+- If user wants links, they must explicitly ask for "contact" or "social links".
+
 
 ROLE:
 - Web Developer

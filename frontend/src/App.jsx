@@ -8,7 +8,10 @@ import { useTypewriter, Cursor } from 'react-simple-typewriter';
 
 import my from './assets/my.jpeg';
 import talkieePic from './assets/talkiee-signup.png'; 
+
 import image from './assets/image.png'; 
+import helmet from './assets/helmet.jpg'; 
+
 
 import { FaGithub, FaLinkedin, FaCode } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
@@ -56,8 +59,8 @@ const projectsData = [
     title: "SafeRide AI - Helmet & Rider Detection",
     description: "Developed an AI-powered system for helmet detection using YOLOv8 and real-time visualization with Streamlit.",
     tech: ["Python", "YOLOv8", "Streamlit"],
-    link: "#",
-    imageUrl: "https://via.placeholder.com/400x250/0f172a/1e293b?text=SafeRide+AI+Screenshot"
+    link: "https://github.com/rishikarohila12/HelmetDetection",
+    imageUrl: helmet
   }
 ];
 
