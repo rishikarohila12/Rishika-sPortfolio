@@ -57,6 +57,32 @@ She assisted in maintaining web-based applications for a Toll Management System 
 - Features include authentication, product listing, cart, and filtering`
       });
     }
+    // 🔹 LINKEDIN (direct intent)
+if (
+  lowerMsg.includes("linkedin") ||
+  lowerMsg.includes("linked in")
+) {
+  return res.json({
+    reply: `You can find Rishika Rohila on LinkedIn here:
+🔗 https://www.linkedin.com/in/rishika-rohila-a83527260`
+  });
+}
+// 🔹 GITHUB
+if (lowerMsg.includes("github")) {
+  return res.json({
+    reply: `Rishika Rohila's GitHub profile:
+💻 https://github.com/rishikarohila12`
+  });
+}
+
+// 🔹 LEETCODE
+if (lowerMsg.includes("leetcode")) {
+  return res.json({
+    reply: `Rishika Rohila's LeetCode profile:
+🧠 https://leetcode.com/u/rishroh`
+  });
+}
+
 
     // 🔹 CONTACT
     if (lowerMsg.includes("contact")) {
@@ -68,6 +94,7 @@ She assisted in maintaining web-based applications for a Toll Management System 
 💻 GitHub: https://github.com/rishikarohila12  
 🧠 LeetCode: https://leetcode.com/u/rishroh`
       });
+      
     }
 
     // 🔹 AI call ONLY when needed
