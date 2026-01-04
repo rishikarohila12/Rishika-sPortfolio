@@ -18,32 +18,33 @@ const ChatBot = () => {
   }, [messages, loading]);
 
   const sendMessage = async () => {
-    if (!input.trim()) return;
+  if (!input.trim()) return;
 
-    const userMessage = { role: "user", text: input };
-    setMessages(prev => [...prev, userMessage]);
-    setInput("");
-    setLoading(true);
+  const userMessage = { role: "user", text: input };
+  setMessages(prev => [...prev, userMessage]);
+  setInput("");
+  setLoading(true);
 
-    try {
-     axios.post(
-  `${import.meta.env.VITE_BACKEND_URL}/api/chat`,
-  { message: input }
-);
+  try {
+    const res = await axios.post(
+      `${import.meta.env.VITE_BACKEND_URL}/api/chat`,
+      { message: input }
+    );
 
-      setMessages(prev => [
-        ...prev,
-        { role: "ai", text: res.data.reply }
-      ]);
-    } catch {
-      setMessages(prev => [
-        ...prev,
-        { role: "ai", text: "Something went wrong. Please try again." }
-      ]);
-    } finally {
-      setLoading(false);
-    }
-  };
+    setMessages(prev => [
+      ...prev,
+      { role: "ai", text: res.data.reply }
+    ]);
+  } catch (error) {
+    console.error(error);
+    setMessages(prev => [
+      ...prev,
+      { role: "ai", text: "Something went wrong. Please try again." }
+    ]);
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <>
