@@ -415,7 +415,6 @@ function Footer() {
         </a>
       </div>
       <p>&copy; {new Date().getFullYear()} {personalData.name}.</p>
-      <p>Built with React, Tailwind CSS & Framer Motion.</p>
     </footer>
   );
 }
