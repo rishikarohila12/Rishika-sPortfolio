@@ -26,9 +26,10 @@ const ChatBot = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:5000/api/chat", {
-        message: input
-      });
+     axios.post(
+  `${import.meta.env.VITE_BACKEND_URL}/api/chat`,
+  { message: input }
+);
 
       setMessages(prev => [
         ...prev,
