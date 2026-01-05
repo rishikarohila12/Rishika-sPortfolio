@@ -48,3 +48,34 @@
 ::-webkit-scrollbar-thumb:hover {
   background-color: #22d3ee; /* cyan-400 (hover effect) */
 }
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-40px);
+    opacity: 0.2;
+  }
+}
+
+.animate-float {
+  animation-name: float;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes blink {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-blink {
+  animation: blink ease-in-out infinite;
+}

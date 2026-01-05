@@ -1,5 +1,9 @@
 import React from 'react';
 import ChatBot from "./components/ChatBot";
+import ThreeHero from "./components/Three/ThreeHero";
+import BlinkingBulbs from "./components/BlinkingBulbs";
+
+
 
 // Framer Motion
 import { motion, useScroll } from 'framer-motion';
@@ -228,21 +232,25 @@ function Hero() {
 function Section({ id, title, children, bgClass = "bg-slate-900" }) {
   return (
     <motion.section
-      id={id}
-      className={`py-24 ${bgClass} bg-opacity-90 rounded-3xl mx-4 my-4 shadow-xl shadow-indigo-900/20`}
-      variants={sectionFadeIn}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-    >
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-cyan-300 to-indigo-500 relative w-min mx-auto tracking-wide">
-          {title}
-          <span className="absolute left-0 -bottom-2 w-full h-1 bg-gradient-to-r from-teal-400 via-cyan-400 to-indigo-400"></span>
-        </h2>
-        {children}
-      </div>
-    </motion.section>
+  id={id}
+  className={`relative py-24 ${bgClass} bg-opacity-90 rounded-3xl mx-4 my-4 shadow-xl`}
+  variants={sectionFadeIn}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+>
+  {/* 🔹 blinking bulbs background */}
+  <BlinkingBulbs count={12} />
+
+  {/* actual content */}
+  <div className="relative z-10 container mx-auto px-6">
+    <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-16">
+      {title}
+    </h2>
+    {children}
+  </div>
+</motion.section>
+
   );
 }
 
